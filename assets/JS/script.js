@@ -62,11 +62,25 @@ const uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "
 const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8",  "9",];
 const specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "?"];
 
-var password = [];
+var passwordOptions = [];
 
 //generate a password with user criteria
 function generatePassword() {
+    //add each selected character type to password options
+     if (useLowercase) { passwordOptions = passwordOptions.concat(lowercase); }
+     if (useUppercase) { passwordOptions = passwordOptions.concat(uppercase); }
+     if (useNumbers) { passwordOptions = passwordOptions.concat(numbers); }
+     if (useSpecial) { passwordOptions = passwordOptions.concat(specialCharacters); }
     
+
+     //generate password
+     var password;
+     for (i= 0; i < passwordLength; i++) {
+        password += passwordOptions[Math.floor(math.random() * passwordOptions.passwordLength)];
+
+        return password;
+    }
+
 }
 
 
